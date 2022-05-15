@@ -3,10 +3,12 @@ import Image from 'next/image'
 import { Navbar, Container, Nav, NavDropdown, Button, FormControl, Form } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 import Router from 'next/router';
-import { faHomeUser, faUserLarge, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faHomeUser, faUserLarge, faBell, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Modal from 'react-modal';
-
+import { ChangeTopMenuIssueModal } from '../../stores/reducers/main/main';
+import { useDispatch, useSelector } from 'react-redux';
+import ReactModal from '../reactModal/reactModal';
+import { useEffect } from 'react';
 
 const UserSettings = e => {
     alert();
@@ -30,8 +32,7 @@ const UserLogout = e => {
 }
 const RightTopMenu = (props) => {
     return (
-        <Nav ><FormControl type="search" placeholder="Search" aria-label="Search"
-        />
+        <Nav ><FormControl type="search" placeholder="Search" aria-label="Search" />
             <Nav.Link className='me-auto' href="#features"><FontAwesomeIcon icon={faBell} /></Nav.Link>
             <NavDropdown title={<FontAwesomeIcon icon={faUserLarge} />} id="collasible-nav-dropdown" >
                 <NavDropdown.Header>Jira</NavDropdown.Header>
@@ -46,9 +47,10 @@ const RightTopMenu = (props) => {
 }
 
 const TopMenu = (props) => {
-    const IssueCreate = e => {
-        debugger;
-        Modal.setAppElement('#main');
+    const dispatch = useDispatch();
+    const Main = useSelector((state) => state.Main);
+    const IssueCreateBtn = e => {
+        dispatch(ChangeTopMenuIssueModal({ TopMenuIssueModal: true }))
     }
     return (
         <>
@@ -67,34 +69,13 @@ const TopMenu = (props) => {
                             <Nav.Link href="javascript:;">Dashboards</Nav.Link>
                             <Nav.Link href="javascript:;">People</Nav.Link>
                             <Nav.Link href="javascript:;">Apps</Nav.Link>
-                            <Button type="button" onClick={IssueCreate}>Create</Button>
+                            <Button type="button" onClick={IssueCreateBtn}>Create</Button>
                         </Nav>
                         <RightTopMenu props={props.props} />
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Modal isOpen={false} >
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            Well never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-            </Modal>
+            <ReactModal props={Main.TopMenuIssueModal} />
             <footer >
             </footer>
         </>
