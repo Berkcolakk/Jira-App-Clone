@@ -4,13 +4,15 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ReactModal = (props) => {
-    debugger;
+    const modalClose = e => {
+        
+    }
     return (
         <Modal isOpen={props.props} shouldCloseOnEsc={true}>
             <Nav>
                 <Navbar className="responsive-navbar-nav pull-right row justify-content-end">
                     <Nav className="me-auto">
-                        <Button variant='lg'><FontAwesomeIcon icon={faX} /></Button>
+                        <Button variant='lg' onClick={modalClose}><FontAwesomeIcon icon={faX} /></Button>
                     </Nav>
                 </Navbar>
             </Nav>

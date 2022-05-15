@@ -1,12 +1,13 @@
 import Head from 'next/head'
 // import Image from 'next/image'
-import { Form, Container, Button, Card } from 'react-bootstrap';
+import { Form, Container, Button, Card, Col } from 'react-bootstrap';
 import { connect, useDispatch } from 'react-redux';
 import { EmailChange, PasswordChange, Success, RememberMeChange } from '../../stores/reducers/login/authReducer';
 import { LoginService } from '../../services/login/login';
 import Swal from 'sweetalert2'
-import '../../styles/login/login.module.scss';
 import Router from 'next/router'
+//SCSS
+import '../../styles/login/login.module.scss';
 
 
 
@@ -28,11 +29,8 @@ const Login = (props) => {
                 title: props.Message,
                 icon: 'success',
                 showConfirmButton: false,
-                timer: 1000
+                timer: 500
             })
-            // .then(() => {
-            //     Router.push("/Main");
-            // })
         });
     }
     return (
@@ -40,9 +38,9 @@ const Login = (props) => {
             <Head>
                 <title>Login</title>
             </Head>
-            <Container >
-                <div id="login" className='d-flex justify-content-center h-100'>
-                    <Card>
+            <Container>
+                <div id="loginContainer" style={{ marginTop: '20%;' }}>
+                    <Card id="loginForm">
                         <Card.Header>
                             <h3>Login</h3>
                             {/* <Image src="../../public/img/noImage.png" width={50} height={50} /> */}
@@ -71,7 +69,7 @@ const Login = (props) => {
                             </Form>
                         </Card.Body>
                         <Card.Footer>
-
+                            Şifremi unuttum.
                         </Card.Footer>
                     </Card>
                 </div>
