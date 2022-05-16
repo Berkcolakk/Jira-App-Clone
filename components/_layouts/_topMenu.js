@@ -37,7 +37,7 @@ const RightTopMenu = (props) => {
             <NavDropdown title={<FontAwesomeIcon icon={faUserLarge} />} id="collasible-nav-dropdown" >
                 <NavDropdown.Header>Jira</NavDropdown.Header>
                 <NavDropdown.Item href="javascript:;">Personel settings</NavDropdown.Item>
-                <NavDropdown.Header>{props.props.NameSurname}</NavDropdown.Header>
+                <NavDropdown.Header>{props?.props?.NameSurname}</NavDropdown.Header>
                 <NavDropdown.Item href="javascript:;">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href='javascript:;' onClick={UserLogout}>Logout</NavDropdown.Item>
@@ -55,10 +55,10 @@ const TopMenu = (props) => {
     return (
         <>
             <Head>
-                <title>{props.props.NameSurname}</title>
+                <title>{props?.props?.NameSurname}</title>
             </Head>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
+                <Container expand="lg" >
                     <Navbar.Brand href="javascript:;"><FontAwesomeIcon icon={faHomeUser} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

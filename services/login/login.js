@@ -2,7 +2,7 @@ const UserData = {
     Email: "",
     DateOfBirth: "30.06.1997",
     Message: "",
-    NameSurname:"Berk Çolak",
+    NameSurname: "Berk Çolak",
     Image: "",
     IsLogin: false,
     RememberMe: false,
@@ -21,4 +21,11 @@ export const LoginService = (username, password) => {
 }
 export const LogoutService = () => {
     localStorage.removeItem("authUser");
+}
+export const GetUser = () => {
+    if (typeof window !== "undefined") {
+        if (localStorage.getItem("authUser") != null) {
+            return JSON.parse(localStorage.getItem("authUser"))
+        }
+    }
 }
