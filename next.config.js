@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
   images: {
-    domains: ['flowbite.com', "avatars.githubusercontent.com", ]
+    domains: ['flowbite.com','tailwindui.com', "avatars.githubusercontent.com", ]
   },
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname

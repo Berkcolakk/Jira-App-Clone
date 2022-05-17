@@ -9,12 +9,17 @@ const features = [
     { name: 'Finish', description: 'Hand sanded and finished with natural oil' },
     { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
     { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
-  ]
+]
 const Layout = () => {
     const User = GetUser();
     return (
         <>
             <TopMenu props={User} />
+            <div>
+                <div>
+                    <h1></h1>
+                </div>
+            </div>
             <div className="bg-white">
                 <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
                     <div>
