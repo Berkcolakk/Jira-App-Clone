@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.6.1",
     "@mui/x-data-grid": "^5.10.0",
     "@reduxjs/toolkit": "^1.8.1",
+    "autoprefixer": "^10.4.5",
     "flowbite": "^1.4.5",
     "next": "12.1.6",
     "react": "18.1.0",
@@ -28,10 +29,12 @@
     "sweetalert2": "^11.4.14"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   }
 }

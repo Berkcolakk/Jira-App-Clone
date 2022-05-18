@@ -10,7 +10,8 @@ import ReactModal from '../reactModal/reactModal';
 import { useEffect } from 'react';
 import { UserProfileMenuChange } from '../../stores/reducers/main/navbar';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment } from 'react';
+import Link from 'next/link';
 
 const user = {
     name: 'Tom Cook',
@@ -25,8 +26,8 @@ const navigation = [
             MenuName: 'Your work', Href: '#', Current: true
         }
     },
-    { MenuName: 'Projects', Href: '#', Current: false, Type: "MenuItem" },
-    { MenuName: 'Filters', Href: '#', Current: false, Type: "MenuItem" },
+    { MenuName: 'Projects', Href: '/Main', Current: false, Type: "MenuItem" },
+    { MenuName: 'Filters', Href: '/Issues', Current: false, Type: "MenuItem" },
     { MenuName: 'Dashboards', Href: '#', Current: false, Type: "MenuItem" },
     { MenuName: 'People', Href: '#', Current: false, Type: "MenuItem" },
     { MenuName: 'Apps', Href: '#', Current: false, Type: "MenuItem" },
@@ -79,7 +80,7 @@ const UserProfileMenu = () => {
                     {userNavigation.map((item) => (
                         <Menu.Item key={item.MenuName}>
                             {({ active }) => (
-                                <a
+                                <Link
                                     href={item.Href}
                                     className={classNames(
                                         active ? 'bg-gray-100' : '',
@@ -87,7 +88,7 @@ const UserProfileMenu = () => {
                                     )}
                                 >
                                     {item.MenuName}
-                                </a>
+                                </Link>
                             )}
                         </Menu.Item>
                     ))}
@@ -122,19 +123,17 @@ const CreateMenuButton = (item) => {
 }
 const CreateMenuItem = (item) => {
     return (
-        <a
+        <Link
             key={item.props.MenuName}
-            href={item.props.Href}
-            className={classNames(
+            href={item.props.Href}>
+            <a key={item.props.MenuName} className={classNames(
                 item.props.Current
                     ? 'bg-gray-900 text-white'
                     : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                 'px-3 py-2 rounded-md text-sm font-medium'
             )}
-            aria-current={item.props.Current ? 'page' : undefined}
-        >
-            {item.props.MenuName}
-        </a>
+                aria-current={item.props.Current ? 'page' : undefined}>{item.props.MenuName}</a>
+        </Link>
     )
 }
 const mapStateToProps = state => ({ ...state.Navbar });
@@ -157,13 +156,15 @@ const TopMenu = (props) => {
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <a href="">
-                                            <Image
-                                                className="h-8 w-8"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" layout="fixed" height={40} width={40}
-                                                alt="Workflow"
-                                            />
-                                        </a>
+                                        <Link href="/Main">
+                                            <a>
+                                                <Image
+                                                    className="h-8 w-8"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" layout="fixed" height={40} width={40}
+                                                    alt="Workflow"
+                                                />
+                                            </a>
+                                        </Link>
                                     </div>
                                     <LeftMenuBar />
                                 </div>
