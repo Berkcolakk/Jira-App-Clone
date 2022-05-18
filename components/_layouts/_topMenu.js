@@ -112,7 +112,7 @@ const LeftMenuBar = () => {
 }
 const CreateMenuButton = (item) => {
     return (
-        <a key={item.props.MenuName} href='javascript:;' className={classNames(
+        <a key={item.props.MenuName} href='' className={classNames(
             item.props.Current
                 ? 'bg-gray-900 text-white'
                 : 'bg-black-900 text-gray-300 hover:bg-gray-700 hover:text-white',

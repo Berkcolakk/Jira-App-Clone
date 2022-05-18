@@ -1,5 +1,6 @@
-import Layout from "../components/_layouts/_layout";
+import Dashboard from "../components/dashboard/dashboard";
 import Router from 'next/router';
+import Layout from '../components/_layouts/_layout';
 
 const MainPage = () => {
     if (typeof window !== "undefined") {
@@ -8,7 +9,10 @@ const MainPage = () => {
         }
     }
     return (
-        <Layout />
+        <>
+            <Layout />
+            <Dashboard />
+        </>
     )
 }
 export default MainPage;
