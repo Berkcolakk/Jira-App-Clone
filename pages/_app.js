@@ -6,9 +6,9 @@ import store from '../stores/store';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
   )
 }
 
