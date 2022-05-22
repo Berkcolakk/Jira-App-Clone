@@ -4,7 +4,6 @@ import Main from './reducers/main/main';
 import Navbar from './reducers/main/navbar';
 
 const taskMiddleware = (store) => (next) => (action) => {
-  debugger;
   const result = next(action);
   const taskState = store.getState();
   if (typeof window !== 'undefined') {

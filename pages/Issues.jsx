@@ -1,5 +1,5 @@
-import Layout from '../components/_layouts/_layout';
-import IssuesComponent from '../components/issues/issues';
+import Layout from 'Layouts/Login/LoginLayout';
+import IssuesComponent from 'components/Issues/Issues';
 const Issues = () => {
     return (
         <>

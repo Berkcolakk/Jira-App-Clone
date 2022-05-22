@@ -4,10 +4,10 @@ import Swal from 'sweetalert2'
 import Router from 'next/router';
 import { faHomeUser, faUserLarge, faBell, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ChangeTopMenuIssueModal } from '../../stores/reducers/main/main';
+import { ChangeTopMenuIssueModal } from 'stores/reducers/main/main';
 import { connect, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { UserProfileMenuChange } from '../../stores/reducers/main/navbar';
+import { UserProfileMenuChange } from 'stores/reducers/main/navbar';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react';
 import Link from 'next/link';

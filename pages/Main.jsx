@@ -1,7 +1,6 @@
-import Dashboard from "../components/dashboard/dashboard";
+import Dashboard from "components/Dashboard/Dashboard";
 import Router from 'next/router';
-import Layout from '../components/_layouts/_layout';
-
+import Layout from 'Layouts/Main/Layout';
 const MainPage = () => {
     if (typeof window !== "undefined") {
         if (localStorage.getItem("authUser") === null) {

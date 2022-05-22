@@ -1,4 +1,4 @@
-import Login from "../components/login/login";
+import Login from "components/Auth/Login";
 import Router from 'next/router';
 const Home = () => {
   if (typeof window !== "undefined") {
