@@ -1184,6 +1184,12 @@ select {
   clip: auto;
   white-space: normal;
 }
+.bg-gray-800 {
+  background-color: rgb(31 41 55);
+}
+.text-slate-300 {
+  color: rgb(203 213 225);
+}
 
 .appearance-none {
   -webkit-appearance: none;

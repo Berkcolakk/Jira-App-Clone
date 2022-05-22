@@ -19,7 +19,7 @@ export default function Login(props) {
                   href="https://www.creative-tim.com?ref=nnjs-footer-small"
                   className="text-white hover:text-blueGray-300 text-sm font-semibold py-1"
                 >
-                  Creative Tim
+                  Jira Clone
                 </a>
               </div>
             </div>
@@ -30,7 +30,7 @@ export default function Login(props) {
                     href="https://www.creative-tim.com?ref=nnjs-footer-small"
                     className="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
                   >
-                    Creative Tim
+                    Jira Clone
                   </a>
                 </li>
                 <li>

@@ -7,8 +7,6 @@ const Home = () => {
       Router.push("/Main");
     }
   }
-  return (
-    <Login />
-  )
-}
+  return <Login />;
+};
 export default Home;

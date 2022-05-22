@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import AuthReducer from './reducers/login/authReducer';
-import Main from './reducers/main/main';
-import Navbar from './reducers/main/navbar';
+import AuthReducer from './Reducers/Login/AuthReducer';
+import Main from './Reducers/Main/Main';
+import Navbar from './Reducers/Main/Navbar';
 
 const taskMiddleware = (store) => (next) => (action) => {
   const result = next(action);

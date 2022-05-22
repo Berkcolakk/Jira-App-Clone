@@ -4,7 +4,6 @@ import Navbar from "components/Navbars/Login";
 import FooterSmall from "components/Footers/Login";
 
 const LoginLayout = ({ children }) => {
-  console.log("test");
   return (
     <>
       <Navbar transparent />
