@@ -8,13 +8,10 @@ import {
   RememberMeChange,
 } from "stores/Reducers/Login/AuthReducer";
 import { LoginService } from "Services/Login/Login";
-import Router from "next/router";
 import Link from "next/link";
 //SCSS
 import "styles/login/login.module.scss";
 import LoginLayout from "Layouts/Login/LoginLayout";
-import cookie from "js-cookie";
-import { useEffect } from "react";
 
 const mapStateToProps = (state) => ({ ...state.Auth });
 

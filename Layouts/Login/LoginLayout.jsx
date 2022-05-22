@@ -1,7 +1,7 @@
 import React from "react";
 // components
-import Navbar from "components/Navbars/Login";
-import FooterSmall from "components/Footers/Login";
+import Navbar from "Layouts/Navbars/Login";
+import FooterSmall from "Layouts/Footers/Login";
 
 const LoginLayout = ({ children }) => {
   return (

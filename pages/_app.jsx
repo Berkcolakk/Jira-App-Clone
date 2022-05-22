@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 import store from "stores/store";
 
 function MyApp({ Component, pageProps }) {
-debugger;
+  debugger;
   const Layout = Component.layout || (({ children }) => <>{children}</>);
   return (
-    <Layout>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Layout>
         <Component {...pageProps} />
-      </Provider>
-    </Layout>
+      </Layout>
+    </Provider>
   );
 }
 

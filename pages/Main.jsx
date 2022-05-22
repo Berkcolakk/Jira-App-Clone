@@ -1,19 +1,20 @@
 import Dashboard from "components/Dashboard/Dashboard";
-import Router from 'next/router';
-import Layout from 'Layouts/Main/Layout';
-import cookie from "js-cookie";
+import Router from "next/router";
+import Layout from "Layouts/Main/Layout";
 import { useEffect } from "react";
+import { GetTokenForHeader } from "Services/Base/BaseService";
 const MainPage = () => {
-    if (typeof window !== "undefined") {
-        if (localStorage.getItem("authUser") === null) {
-            Router.push("/");
-        }
+  useEffect(() => {
+    console.log(GetTokenForHeader());
+    if (GetTokenForHeader() == null) {
+      Router.push("/");
     }
-    return (
-        <>
-            <Layout />
-            <Dashboard />
-        </>
-    )
-}
+  });
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
+};
+MainPage.layout = Layout;
 export default MainPage;

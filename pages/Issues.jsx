@@ -1,11 +1,11 @@
-import Layout from 'Layouts/Login/LoginLayout';
-import IssuesComponent from 'components/Issues/Issues';
+import IssuesComponent from "components/Issues/Issues";
+import Layout from "Layouts/Main/Layout";
 const Issues = () => {
-    return (
-        <>
-            <Layout />
-            <IssuesComponent />
-        </>
-    )
-}
+  return (
+    <>
+      <IssuesComponent />
+    </>
+  );
+};
+Issues.layout = Layout;
 export default Issues;
