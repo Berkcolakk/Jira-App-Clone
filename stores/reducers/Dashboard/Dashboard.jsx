@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const Main = createSlice({
-    name: 'Main',
+export const Dashboard = createSlice({
+    name: 'Dashboard',
     initialState: {
         TopMenuIssueModal: false
     },
     reducers: {
         ChangeTopMenuIssueModal: (state, action) => {
-            state.TopMenuIssueModal = action.payload.TopMenuIssueModal
+            state.TopMenuIssueModal = action.payload
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { ChangeTopMenuIssueModal } = Main.actions
+export const { ChangeTopMenuIssueModal } = Dashboard.actions
 
-export default Main.reducer
+export default Dashboard.reducer

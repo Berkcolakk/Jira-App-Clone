@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { GetTokenForHeader } from "Services/Base/BaseService";
 const MainPage = () => {
   useEffect(() => {
-    console.log(GetTokenForHeader());
+    
     if (GetTokenForHeader() == null) {
       Router.push("/");
     }

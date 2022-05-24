@@ -32,7 +32,7 @@ const UserLogout = (e) => {
   });
 };
 const UserProfileMenu = (props) => {
-  console.log(props.props.Image);
+  
   return (
     <Menu as="div" className="ml-3 relative">
       <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
